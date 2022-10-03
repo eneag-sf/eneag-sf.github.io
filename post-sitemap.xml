@@ -9,8 +9,16 @@
 
 
     <url>
-        <loc>https://eneagjoka.com/2022/10/03/dreamforce22/</loc>
-        <lastmod>2022-10-03T11:03:58.800Z</lastmod>
+        <loc>https://eneagjoka.com/2022/10/03/a/</loc>
+        <lastmod>2022-10-03T11:59:59.159Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://eneagjoka.com/2022/09/21/dreamforce22/</loc>
+        <lastmod>2022-10-03T11:59:24.419Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
