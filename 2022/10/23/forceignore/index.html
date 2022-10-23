@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Intro to the issueHave you ever worked with scratch orgs and wondered how could you ignore all changes to a specific folder (e.g Profiles), except to just one specific file in that folder, let’s say S">
+    <meta name="description" content="Intro to the issueHave you ever worked with scratch orgs and wondered how you could ignore all changes to a specific folder (e.g Profiles), except to just one specific file in that folder, let’s say S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to .forceignore a whole folder, except a specific file in your DX Project">
 <meta property="og:url" content="https://eneagjoka.com/2022/10/23/forceignore/index.html">
 <meta property="og:site_name" content="Salesforce Architecture &amp; Development Blog">
-<meta property="og:description" content="Intro to the issueHave you ever worked with scratch orgs and wondered how could you ignore all changes to a specific folder (e.g Profiles), except to just one specific file in that folder, let’s say S">
+<meta property="og:description" content="Intro to the issueHave you ever worked with scratch orgs and wondered how you could ignore all changes to a specific folder (e.g Profiles), except to just one specific file in that folder, let’s say S">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://eneagjoka.com/2022/10/23/forceignore/forceignoreexample.png">
 <meta property="article:published_time" content="2022-10-23T11:39:31.000Z">
-<meta property="article:modified_time" content="2022-10-23T12:37:58.351Z">
+<meta property="article:modified_time" content="2022-10-23T12:38:43.742Z">
 <meta property="article:author" content="Enea Gjoka">
 <meta property="article:tag" content="salesforce">
 <meta property="article:tag" content="sfdx">
@@ -154,7 +154,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="Intro-to-the-issue"><a href="#Intro-to-the-issue" class="headerlink" title="Intro to the issue"></a>Intro to the issue</h1><p>Have you ever worked with scratch orgs and wondered how could you ignore <strong>all</strong> changes to a <strong>specific</strong> folder (e.g Profiles), <strong>except</strong> to just one specific file in that folder, let’s say System Admin profile? </p>
+    <h1 id="Intro-to-the-issue"><a href="#Intro-to-the-issue" class="headerlink" title="Intro to the issue"></a>Intro to the issue</h1><p>Have you ever worked with scratch orgs and wondered how you could ignore <strong>all</strong> changes to a <strong>specific</strong> folder (e.g Profiles), <strong>except</strong> to just one specific file in that folder, let’s say System Admin profile? </p>
 <p>The first thing that comes into your mind is copy-pasting all the file paths that you want to ignore, except the one that you want to <strong>NOT</strong> ignore. This would result on having a lot of lines, making the .forceignore file a lot longer and not so easily readable.</p>
 <p>Don’t rush and do that, because there is a better solution to it 🎉</p>
 <h1 id="The-Solution"><a href="#The-Solution" class="headerlink" title="The Solution"></a>The Solution</h1><p>We can use the exclamation point <strong>“!”</strong> to make the specific exclusion, just like we would use it in our validation rules, apex or in a .gitignore file.</p>
