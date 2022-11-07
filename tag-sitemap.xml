@@ -3,36 +3,36 @@
 
 
     <url>
-        <loc>https://eneagjoka.com/tags/sfdx/</loc>
-        <lastmod>2022-10-24T06:59:58.707Z</lastmod>
+        <loc>https://eneagjoka.com/tags/community/</loc>
+        <lastmod>2022-11-07T10:15:49.009Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://eneagjoka.com/tags/salesforce/</loc>
-        <lastmod>2022-10-24T06:59:58.707Z</lastmod>
+        <lastmod>2022-11-07T10:15:49.009Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://eneagjoka.com/tags/sfdx/</loc>
+        <lastmod>2022-11-07T10:13:07.067Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://eneagjoka.com/tags/df22/</loc>
-        <lastmod>2022-10-23T12:34:12.816Z</lastmod>
+        <lastmod>2022-11-07T10:13:07.067Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://eneagjoka.com/tags/dreamforce/</loc>
-        <lastmod>2022-10-23T12:34:12.816Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://eneagjoka.com/tags/community/</loc>
-        <lastmod>2022-10-23T11:42:04.338Z</lastmod>
+        <lastmod>2022-11-07T10:13:07.067Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
