@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="IntroI recently had the pleasure of hosting the fourth meeting of the Düsseldorf Architect Group, which took place on March 16th 2023. It was an engaging gathering that showcased the innovative ideas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁">
+<meta property="og:url" content="https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/index.html">
+<meta property="og:site_name" content="Salesforce Architecture &amp; Development Blog">
+<meta property="og:description" content="IntroI recently had the pleasure of hosting the fourth meeting of the Düsseldorf Architect Group, which took place on March 16th 2023. It was an engaging gathering that showcased the innovative ideas">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/1.png">
+<meta property="og:image" content="https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/2.jpeg">
+<meta property="og:image" content="https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/3.png">
+<meta property="article:published_time" content="2023-03-16T17:00:24.000Z">
+<meta property="article:modified_time" content="2023-05-20T08:50:28.061Z">
+<meta property="article:author" content="Enea Gjoka">
+<meta property="article:tag" content="salesforce">
+<meta property="article:tag" content="community">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/1.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About me</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     --><!--
+       --><li><a href="/archives/">All Posts</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/eneag-sf">GitHub</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2022/12/22/Open-source-package-trailblazer-architect-meeting/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&text=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&title=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&is_video=false&description=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁&body=Check out this article: https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&title=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&title=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&title=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&title=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&name=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&t=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Intro"><span class="toc-number">1.</span> <span class="toc-text">Intro</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Join-our-Trailblazer-Group-%E2%A4%B5%EF%B8%8F"><span class="toc-number">2.</span> <span class="toc-text">Join our Trailblazer Group ⤵️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pictures-%F0%9F%93%B8"><span class="toc-number">3.</span> <span class="toc-text">Pictures 📸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Next-meeting-%F0%9F%93%86"><span class="toc-number">4.</span> <span class="toc-text">Next meeting 📆</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Enea Gjoka</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-03-16T17:00:24.000Z" itemprop="datePublished">2023-03-16</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/community/" rel="tag">community</a>, <a class="tag-link-link" href="/tags/salesforce/" rel="tag">salesforce</a>
+    </div>
+
+
+    </div>
+    ⏱ 2 min. read
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>I recently had the pleasure of hosting the fourth meeting of the Düsseldorf Architect Group, which took place on March 16th 2023. It was an engaging gathering that showcased the innovative ideas of our talented members.</p>
+<p>The highlight of the event was a captivating presentation by Fabian Kramer, a skilled Solution Architect, who delved into the fascinating realm of technology. Titled “Flow Scanner and Documentator, vsCode Extensions &amp; sfdx Plugins”, his session explored the remarkable capabilities of Flow Scanner and Documentator, vsCode Extensions, and sfdx Plugins.</p>
+<p>The presentation sparked enthusiastic discussions and piqued the interest of everyone present. It was truly remarkable to witness the active participation and engagement of our Düsseldorf Architect Group members. Their unwavering commitment to sharing new and intriguing insights continues to be a driving force behind the success of our meetings.</p>
+<p>With each meeting, our group grows stronger, and I am thrilled to witness the immense potential that lies ahead for the Düsseldorf Architect Group. Here’s to many more fruitful gatherings and an exciting future! Cheers! 🥂 #ManyMoreToCome</p>
+<h2 id="Join-our-Trailblazer-Group-⤵️"><a href="#Join-our-Trailblazer-Group-⤵️" class="headerlink" title="Join our Trailblazer Group ⤵️"></a>Join our Trailblazer Group ⤵️</h2><p><a target="_blank" rel="noopener" href="https://trailblazercommunitygroups.com/salesforce-architect-group-dusseldorf-germany/">Salesforce Architect Group, Düsseldorf, Germany</a></p>
+<p>Session Name: <strong>“Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁”</strong></p>
+<h2 id="Pictures-📸"><a href="#Pictures-📸" class="headerlink" title="Pictures 📸"></a>Pictures 📸</h2><p>Here as some pictures from our meeting:</p>
+<p><img src="/2023/03/16/FlowScannerAndDocumentator/1.png" alt="thumbnail"></p>
+<p><img src="/2023/03/16/FlowScannerAndDocumentator/2.jpeg" alt="Enea Gjoka presenting GitHub Actions during the session"></p>
+<p><img src="/2023/03/16/FlowScannerAndDocumentator/3.png" alt="Fabian Kramer presenting a challenge and discussing over possible solutions"></p>
+<h2 id="Next-meeting-📆"><a href="#Next-meeting-📆" class="headerlink" title="Next meeting 📆"></a>Next meeting 📆</h2><p>Next Düsseldorf Architect Trailblazer meeting will be hosted on 14th of June, and will include a very interesting session together with Salesforce. More details will follow soon, but they keyword with be “B2B Commerce Cloud”. See you all soon 🎉</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About me</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/archives/">All Posts</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/eneag-sf">GitHub</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Intro"><span class="toc-number">1.</span> <span class="toc-text">Intro</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Join-our-Trailblazer-Group-%E2%A4%B5%EF%B8%8F"><span class="toc-number">2.</span> <span class="toc-text">Join our Trailblazer Group ⤵️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pictures-%F0%9F%93%B8"><span class="toc-number">3.</span> <span class="toc-text">Pictures 📸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Next-meeting-%F0%9F%93%86"><span class="toc-number">4.</span> <span class="toc-text">Next meeting 📆</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&text=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&title=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&is_video=false&description=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁&body=Check out this article: https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&title=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&title=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&title=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&title=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&name=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://eneagjoka.com/2023/03/16/FlowScannerAndDocumentator/&t=Flow Scanner and Documentator, vsCode Extensions, sfdx Plugins and SWAG 🎁"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    Enea Gjoka
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About me</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     --><!--
+       --><li><a href="/archives/">All Posts</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/eneag-sf">GitHub</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Click to copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TKT04RZ7Z8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TKT04RZ7Z8');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'eneagjokas-blog';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+<!-- utterances Comments -->
+
+</body>
+</html>
