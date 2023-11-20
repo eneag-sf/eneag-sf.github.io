@@ -3,6 +3,27 @@
 
 
     <url>
+        <loc>https://eneagjoka.com/tags/group/</loc>
+        <lastmod>2023-11-20T19:50:15.753Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://eneagjoka.com/tags/worldtour/</loc>
+        <lastmod>2023-11-20T19:50:15.753Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://eneagjoka.com/tags/trailblazer/</loc>
+        <lastmod>2023-11-20T19:50:15.753Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://eneagjoka.com/tags/mvp/</loc>
         <lastmod>2023-10-16T08:28:34.283Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -89,13 +110,6 @@
     <url>
         <loc>https://eneagjoka.com/tags/dreamforce/</loc>
         <lastmod>2022-11-07T10:33:25.724Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://eneagjoka.com/tags/trailblazer/</loc>
-        <lastmod>2022-10-23T11:42:04.338Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
