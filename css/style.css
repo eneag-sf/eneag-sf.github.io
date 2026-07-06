@@ -1,17 +1,19 @@
-/* ---------- tokens ---------- */
+/* ---------- tokens (palette from The Delivery Engine) ---------- */
 :root {
-  --bg: #07070c;
-  --surface: rgba(255, 255, 255, 0.045);
-  --line: rgba(255, 255, 255, 0.09);
-  --text: #ecebf3;
-  --muted: #9492a6;
-  --blue: #4aa3ff;
-  --violet: #8f6fff;
-  --ok: #58d68b;
-  --grad: linear-gradient(100deg, var(--blue), var(--violet));
-  --radius: 18px;
+  --bg: #050920;
+  --surface: rgba(13, 23, 67, 0.38);
+  --line: rgba(242, 242, 242, 0.09);
+  --text: #f2f2f2;
+  --muted: #8a97c4;
+  --brand: #00d4db;
+  --digital: #0533ff;
+  --gold: #e9b44c;
+  --ok: #4ade9e;
+  --grad: linear-gradient(90deg, var(--brand), var(--digital));
+  --grad-gold: linear-gradient(135deg, #f6d488, #d9a23b 55%, #b87f1f);
+  --radius: 16px;
   --font: "Archivo VF", -apple-system, "Helvetica Neue", Arial, sans-serif;
-  --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
 @font-face {
@@ -30,6 +32,24 @@
   font-display: swap;
   unicode-range: U+0100-024F, U+1E00-1EFF, U+20AC;
 }
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../assets/fonts/ibm-plex-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../assets/fonts/ibm-plex-mono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../assets/fonts/ibm-plex-mono-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
 
 /* ---------- base ---------- */
 * { box-sizing: border-box; margin: 0; }
@@ -46,12 +66,12 @@ body {
   overflow-x: hidden;
 }
 
-::selection { background: rgba(143, 111, 255, 0.35); }
+::selection { background: rgba(0, 212, 219, 0.28); }
 
 a { color: inherit; }
 
 :focus-visible {
-  outline: 2px solid var(--blue);
+  outline: 2px solid var(--brand);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -66,8 +86,9 @@ a { color: inherit; }
 /* ---------- shared type ---------- */
 .eyebrow {
   font-family: var(--mono);
+  font-weight: 500;
   font-size: 0.8125rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -75,10 +96,7 @@ a { color: inherit; }
 .eyebrow.term {
   text-transform: none;
   letter-spacing: 0.08em;
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--brand);
   width: fit-content;
 }
 
@@ -118,7 +136,7 @@ h2 {
   position: absolute;
   inset: -6% 0;
   z-index: -2;
-  background: linear-gradient(160deg, #2a3550, #141626 60%, #0a0a12);
+  background: linear-gradient(160deg, #223058, #0d1743 60%, #050920);
 }
 
 .hero-media img {
@@ -146,8 +164,8 @@ h2 {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(58% 52% at 50% 50%, rgba(7, 7, 12, 0.55), transparent 72%),
-    linear-gradient(to bottom, rgba(7, 7, 12, 0.6), rgba(7, 7, 12, 0.3) 40%, rgba(7, 7, 12, 0.82) 78%, var(--bg));
+    radial-gradient(58% 52% at 50% 50%, rgba(5, 9, 32, 0.55), transparent 72%),
+    linear-gradient(to bottom, rgba(5, 9, 32, 0.6), rgba(5, 9, 32, 0.32) 40%, rgba(5, 9, 32, 0.84) 78%, var(--bg));
 }
 
 .hero-noise {
@@ -171,8 +189,8 @@ h2 {
   width: clamp(150px, 21vw, 216px);
   height: auto;
   filter:
-    drop-shadow(0 0 30px rgba(143, 111, 255, 0.38))
-    drop-shadow(0 0 90px rgba(74, 163, 255, 0.22));
+    drop-shadow(0 0 30px rgba(0, 212, 219, 0.32))
+    drop-shadow(0 0 90px rgba(5, 51, 255, 0.28));
 }
 
 .hero-name {
@@ -203,7 +221,7 @@ h2 {
 }
 
 .grad {
-  background: var(--grad);
+  background: var(--grad-gold);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -223,9 +241,9 @@ h2 {
 }
 
 @keyframes bloom {
-  0%   { opacity: 0; transform: scale(0.86); filter: drop-shadow(0 0 0 rgba(143, 111, 255, 0)) drop-shadow(0 0 0 rgba(74, 163, 255, 0)); }
+  0%   { opacity: 0; transform: scale(0.86); filter: drop-shadow(0 0 0 rgba(0, 212, 219, 0)) drop-shadow(0 0 0 rgba(5, 51, 255, 0)); }
   55%  { opacity: 1; }
-  100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 30px rgba(143, 111, 255, 0.38)) drop-shadow(0 0 90px rgba(74, 163, 255, 0.22)); }
+  100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 30px rgba(0, 212, 219, 0.32)) drop-shadow(0 0 90px rgba(5, 51, 255, 0.28)); }
 }
 
 .hero-in-logo {
@@ -315,10 +333,7 @@ h2 {
 .ticker-group span::after {
   content: "·";
   margin-inline: 1.6rem;
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--brand);
 }
 
 @keyframes ticker {
@@ -343,13 +358,13 @@ h2 {
 .orb-a {
   top: -10%;
   right: -180px;
-  background: radial-gradient(circle at 40% 40%, var(--violet), transparent 65%);
+  background: radial-gradient(circle at 40% 40%, var(--digital), transparent 65%);
 }
 
 .orb-b {
   bottom: -15%;
   left: -200px;
-  background: radial-gradient(circle at 60% 40%, var(--blue), transparent 65%);
+  background: radial-gradient(circle at 60% 40%, var(--brand), transparent 65%);
   animation-delay: -12s;
 }
 
@@ -415,10 +430,7 @@ h2 {
 .card-featured::before { opacity: 0.4; }
 
 .card-featured h3 {
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--brand);
   width: fit-content;
 }
 
@@ -450,10 +462,7 @@ h2 {
 
 .card-note::before {
   content: "★ ";
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--gold);
 }
 
 .card h3 {
@@ -483,12 +492,12 @@ h2 {
 .duo-copy strong { color: var(--text); font-weight: 640; }
 
 .terminal {
-  background: #0c0d15;
+  background: #081030;
   border: 1px solid var(--line);
   border-radius: 14px;
   box-shadow:
     0 30px 80px -20px rgba(0, 0, 0, 0.7),
-    0 0 60px -30px rgba(143, 111, 255, 0.45);
+    0 0 60px -30px rgba(0, 212, 219, 0.4);
   overflow: hidden;
 }
 
@@ -525,10 +534,10 @@ h2 {
   overflow-wrap: anywhere;
 }
 
-.t-dim  { color: #5e5c72; }
+.t-dim  { color: #58679e; }
 .t-cmd  { color: var(--text); }
-.t-vio  { color: var(--violet); }
-.t-blue { color: var(--blue); }
+.t-vio  { color: var(--gold); }
+.t-blue { color: var(--brand); }
 .t-ok   { color: var(--ok); }
 
 .t-caret {
@@ -536,7 +545,7 @@ h2 {
   width: 0.55em;
   height: 1.05em;
   vertical-align: -0.15em;
-  background: var(--violet);
+  background: var(--brand);
   animation: blink 1s steps(1) infinite;
 }
 
@@ -568,8 +577,8 @@ h2 {
 
 .link-pill:hover {
   transform: translateY(-3px);
-  border-color: rgba(143, 111, 255, 0.55);
-  box-shadow: 0 12px 34px -14px rgba(143, 111, 255, 0.5);
+  border-color: rgba(0, 212, 219, 0.55);
+  box-shadow: 0 12px 34px -14px rgba(0, 212, 219, 0.5);
 }
 
 .colophon {
