@@ -29,10 +29,11 @@ Trailblazer community — professional positioning up top, community presence vi
 
 One continuous scroll, four sections:
 
-1. **Hero** — Name large; title "Salesforce Solution Architect"; positioning line along the
-   lines of "Architecting enterprise Salesforce solutions — and pioneering AI-assisted
-   delivery with Claude Code." Dreamforce photo behind a heavy dark gradient overlay.
-   Subtle scroll cue.
+1. **Hero** (revised at user request) — centered monogram composition: the user's EG
+   lightning-slash logo as the main mark (processed to transparent PNG, glow hugging the
+   glyphs), name demoted to small tracked-out caps beneath it, mono title line, thin
+   gradient rule, positioning line. Dreamforce photo behind a dark radial+vertical veil.
+   Subtle scroll cue. The EG logo is also the favicon.
 2. **Expertise** — grid of ~5 glass cards, one-liner each:
    - Enterprise Architecture (Sales, Service & Field Service)
    - B2B Commerce
