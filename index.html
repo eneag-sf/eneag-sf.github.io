@@ -19,6 +19,8 @@
 </head>
 <body>
 
+  <div class="progress" aria-hidden="true"><i></i></div>
+
   <header class="hero" id="top">
     <figure class="hero-media" aria-hidden="true">
       <img src="assets/hero.jpg" alt="" fetchpriority="high" decoding="async">
@@ -43,18 +45,37 @@
   </header>
 
   <main>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span>B2B Commerce for Lightning</span><span>Sales Cloud</span><span>Service Cloud</span><span>Field Service</span><span>Experience Cloud</span><span>Apex</span><span>LWC</span><span>Flows</span><span>Unlocked Packages</span><span>Scratch Orgs</span><span>CI/CD</span><span>Claude Code</span><span>Agentforce</span>
+        </div>
+        <div class="ticker-group">
+          <span>B2B Commerce for Lightning</span><span>Sales Cloud</span><span>Service Cloud</span><span>Field Service</span><span>Experience Cloud</span><span>Apex</span><span>LWC</span><span>Flows</span><span>Unlocked Packages</span><span>Scratch Orgs</span><span>CI/CD</span><span>Claude Code</span><span>Agentforce</span>
+        </div>
+      </div>
+    </div>
+
     <section class="section wrap" id="expertise">
+      <span class="orb orb-a" aria-hidden="true"></span>
       <p class="eyebrow term reveal">&gt;_ expertise</p>
       <h2 class="reveal">What I architect</h2>
 
       <div class="grid reveal-group">
-        <article class="card card-wide reveal">
-          <h3>Platform architecture</h3>
-          <p>Sales, Service &amp; Field Service Cloud — data models, sharing architecture and integrations designed to still make sense in year five.</p>
+        <article class="card card-wide card-featured reveal">
+          <h3>B2B Commerce</h3>
+          <p>Lightning B2B storefronts end to end — catalog and pricing architecture, buyer experiences, carts and checkout that hold up under enterprise volume. CloudCraze to Lightning, done right.</p>
+          <ul class="chips" role="list">
+            <li>Catalog &amp; pricing</li>
+            <li>Checkout at scale</li>
+            <li>Buyer experiences</li>
+            <li>CloudCraze migrations</li>
+          </ul>
+          <p class="card-note">Helped start Germany’s first B2B Commerce community group.</p>
         </article>
         <article class="card reveal">
-          <h3>B2B Commerce</h3>
-          <p>Lightning B2B storefronts, from catalog and pricing architecture to checkout.</p>
+          <h3>Platform architecture</h3>
+          <p>Sales, Service &amp; Field Service Cloud — data models, sharing architecture and integrations designed to still make sense in year five.</p>
         </article>
         <article class="card reveal">
           <h3>Apex &amp; LWC</h3>
@@ -72,19 +93,20 @@
     </section>
 
     <section class="section wrap" id="claude">
+      <span class="orb orb-b" aria-hidden="true"></span>
       <p class="eyebrow term reveal">&gt;_ how I work</p>
       <h2 class="reveal">The architect and the agent</h2>
 
       <div class="duo">
         <div class="duo-copy reveal">
           <p>Eight-plus years of Salesforce platform decisions, now paired with <strong>Claude Code</strong> — an AI agent working inside the codebase.</p>
-          <p>The agent drafts the trigger handlers, writes the tests and sweats the deployment. I own the architecture: the data model, the boundaries, the trade-offs. Together we ship in days what used to take sprints.</p>
+          <p>The agent drafts the trigger handlers, writes the tests and sweats the deployment — from Service Cloud logic to B2B Commerce checkouts. I own the architecture: the data model, the boundaries, the trade-offs. Together we ship in days what used to take sprints.</p>
         </div>
 
-        <div class="terminal reveal" role="img" aria-label="Terminal showing a Claude Code session refactoring an Apex trigger and running tests">
+        <div class="terminal reveal" role="img" aria-label="Terminal looping through Claude Code sessions: refactoring an Apex trigger with tests, and fixing a slow B2B Commerce checkout">
           <div class="term-bar">
             <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="term-title">claude — enterprise-org</span>
+            <span class="term-title" id="term-title">claude — enterprise-org</span>
           </div>
           <div class="term-body" id="term-body" aria-hidden="true"></div>
         </div>
